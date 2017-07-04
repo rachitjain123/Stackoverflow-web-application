@@ -1,0 +1,69 @@
+* User:
+	- Name
+	- Profile Picture
+	- Age
+	- Year Joined
+	- Reputation
+	- Id (Primary Key)
+	//- Followers
+	//- Location
+
+* Question:
+	- Question Id (Primary Key)
+	- User Id (Foreign Key)
+	- Time
+	//- UTC time (Also local)
+	- Content
+	- Upvotes
+	- Downvotes
+	- Tags
+
+* Vote:
+	- Type (Boolean)
+	- Id (Primary)
+	- User Id (Foreign)
+	- Question Id
+	- Comment Id
+	- Answer Id
+
+* Answer:
+	- Answer Id (Primary Key)
+	- Question Id (Foreign Key)
+	- Upvotes
+	- Downvotes
+	- User Id (Foreign Key)
+	- Accepted (Boolean)
+
+* Comments (Only 1 level):
+	- Comment Id (Primary key)
+	- Question Id (Foreign Key)
+	- Answer Id (Foreign Key)
+	- User Id (Primary Key)
+
+"""* Followers:
+	- User Id (Primary Key)
+	- Follower Id (Foreign Key, backref)"""
+
+* Login:
+	- Using wtforms, flask-login (Own)
+	//- OAuth Based (Google, Facebook, Twitter) [Maybe?]
+	- Session Handline done by flask-login package
+
+* Database:
+	//- Will support migrations (Upgrade, Downgrade)
+	- Most Probably SQllite/ MySQL (Must)
+
+** Not included in Schema **
+
+* Pagination:
+	- For post there will be multiple pages
+
+* Index:
+	- Options (Answered/Unanswered/All)
+	- Index will show unanswered questions
+
+* Frameworks Used:
+	- Flask
+	- Bootstrap
+	- jQuery
+	- Others
